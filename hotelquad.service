@@ -1,0 +1,15 @@
+[Unit]
+Description=VLC RTSP Start
+ After=network.target
+ After=system-user-sessions.service
+ After=network-online.target
+
+[Service]
+User=survtech
+Environment="DISPLAY=:0.1"
+ExecStart=/usr/bin/vlc --vout x11 --x11-display :0.1 --fullscreen -Rf rtsp://172.17.201.40:5004/cctv.sdp
+#WorkingDirectory=/home/sean/Videos
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
