@@ -6,7 +6,7 @@ new   bg broadcast enabled
 # bg just plain black background jpg image
 setup bg input     "/home/survtech/mosaic/1920x1080gray.jpg"
 setup bg option image-duration=-1
-setup bg output #transcode{sfilter=mosaic{width=1920,height=1080,cols=2,rows=2,position=1,order="1,2,3,4",keep-aspect-ratio=enabled,keep-picture=1,mosaic-align=5},vcodec=mpeg2,fps=30}:bridge-in{delay=400,id-offset=100}:rtp{mu$
+setup bg output #transcode{sfilter=mosaic{width=1920,height=1080,cols=2,rows=2,position=1,order="1,2,3,4",keep-aspect-ratio=enabled,keep-picture=1,mosaic-align=5},vcodec=mpeg2,fps=30}:bridge-in{delay=400,id-offset=100}:rtp{mu$dst=172.17.201.40,port=5004,sdp=rtsp://172.17.201:5004/cctv.sdp
 
 # Input options
 new   1 broadcast enabled loop
